@@ -1,8 +1,6 @@
 import s from '../../styles.css';
 import React, { Component } from 'react';
 
-const axios = require('axios').default;
-
 export class SearchBar extends Component {
   state = {
     query: '',

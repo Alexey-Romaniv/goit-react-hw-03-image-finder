@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { SearchBar } from './Searchbar/Searchbar';
 import fetchImages from 'services/rest-api';
-const axios = require('axios').default;
 
 export class App extends Component {
   state = {
