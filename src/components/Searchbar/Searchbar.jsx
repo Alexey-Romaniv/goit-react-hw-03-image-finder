@@ -1,5 +1,8 @@
-import s from '../../styles.css';
+import s from '../../styles.module.css';
 import React, { Component } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 export class SearchBar extends Component {
   state = {
@@ -12,8 +15,7 @@ export class SearchBar extends Component {
   handleOnSubmit = e => {
     e.preventDefault();
     if (this.state.query.trim() === '') {
-      return alert('Enter image category name');
-      // Заменить потом
+      return toast.warn('Enter image category name');
     }
     this.props.onSubmit(this.state.query);
     this.setState({ query: '' });
@@ -22,8 +24,9 @@ export class SearchBar extends Component {
   render() {
     return (
       <header className={s.Searchbar}>
-        <form className={s.SearchForm} onSubmit={e => this.handleSubmit(e)}>
+        <form className={s.SearchForm} onSubmit={e => this.handleOnSubmit(e)}>
           <button type="submit" className={s.SearchForm_button}>
+            <AiOutlineSearch size={18} />
             <span className={s.SearchForm_button_label}>Search</span>
           </button>
 
