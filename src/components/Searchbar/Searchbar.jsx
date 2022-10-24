@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineSearch } from 'react-icons/ai';
+import PropTypes from 'prop-types';
 
 export class SearchBar extends Component {
   state = {
@@ -45,3 +46,7 @@ export class SearchBar extends Component {
     );
   }
 }
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
